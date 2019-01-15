@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/game.css';
+import ClickSound from '../assets/14066__adcbicycle__13.wav';
+
 class Game extends Component {
   constructor(props) {
     super(props)
@@ -21,7 +23,14 @@ class Game extends Component {
       wisdomUnlocked: false,
     }
   }
+
+  playSound = () => {
+    let audio = new Audio(ClickSound);
+    audio.play()
+  }
+
   render() {
+    let { state } = this;
     return (
       <article className="Game">
         <section className="game-left-section">
@@ -42,24 +51,24 @@ class Game extends Component {
           </aside>
           <aside>
             <div className="game-unlockable-button-container">
-              <button className="game-default-button shine">Craft</button>
-              <button className="game-default-button">Travel</button>
-              <button className="game-default-button">Trade</button>
-              <button className="game-default-button">Wisdom</button>
+              <button onMouseDown={this.playSound} className={`game-default-button`}>Craft</button>
+              <button className={`game-default-button ${state.travelUnlocked? '' : 'game-locked-button'}`}>{state.travelUnlocked? 'Travel' : 'Locked'}</button>
+              <button className={`game-default-button ${state.tradeUnlocked? '' : 'game-locked-button'}`}>{state.travelUnlocked? 'Trade' : 'Locked'}</button>
+              <button className={`game-default-button ${state.wisdomUnlocked? '' : 'game-locked-button'}`}>{state.travelUnlocked? 'Wisdom' : 'Locked'}</button>
             </div>
             <div className="game-settings-button-container">
-              <button className="game-default-button">Settings</button>
+              <button className={`game-default-button`}>Settings</button>
             </div>
           </aside>
           <footer>
             <div className="game-hotbar-button-container">
               <button className="game-default-button shine">Inventory</button>
-              <button className="game-default-button">Select Tool</button>
-              <button className="game-default-button">Milestones</button>
-              <button className="game-default-button">Quest Book</button>
+              <button className={`game-default-button ${state.selectToolUnlocked? '' : 'game-locked-button'}`}>{state.travelUnlocked? 'Select tool' : 'Locked'}</button>
+              <button className={`game-default-button`}>Milestones</button>
+              <button className={`game-default-button`}>Quest Book</button>
             </div>
-            <div className="game-bag-button-container">
-              Bag
+            <div className={`game-bag-button-container ${state.travelUnlocked? '' : 'game-locked-button'}`}>
+              {state.bagUnlocked? 'Bag' : 'Locked'}
             </div>
           </footer>
         </section>

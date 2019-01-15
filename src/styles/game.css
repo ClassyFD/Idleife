@@ -88,6 +88,13 @@
   border:2px solid black;
   border-radius: 5px;
   font-weight: bold;
+  user-select: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 1px 1px black;
+}
+.game-default-button:active {
+  box-shadow: none;
 }
 .game-unlockable-button-container {
   width: 75%;
@@ -132,4 +139,8 @@
   height: 25px;
   /* align-items: center; */
   background: red;
+}
+.game-locked-button {
+  background: rgb(97, 97, 97);
+  cursor: default;
 }
