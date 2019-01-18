@@ -30,13 +30,13 @@
   width: 80%;
   height: 75%;
   display: flex;
-  justify-content: center;
   margin: 0;
   padding: 0;
   background: white;
   border: solid 2px #181818;
   border-radius: 5px;
   overflow: hidden;
+  flex-direction: column;
 }
 .game-right-section {
   display: flex;
@@ -67,7 +67,7 @@
 .game-right-section > aside:nth-of-type(1) {
   width: 94%;
   height: 70px;
-  background: white;
+  background: black;
   margin-top: 10px;
   border: solid 2px #181818;
   border-radius: 5px;
@@ -138,10 +138,12 @@
   list-style: none;
   width: 100%;
   display: flex;
-  justify-content: center;
   height: 25px;
-  /* align-items: center; */
-  background: red;
+  cursor: pointer;
+  justify-content: center;
+}
+.game-left-section > ul > li:hover {
+  background: rgb(228, 228, 228);
 }
 .game-locked-button {
   background: rgb(97, 97, 97);
