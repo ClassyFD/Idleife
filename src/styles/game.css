@@ -64,14 +64,6 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-.game-right-section > aside:nth-of-type(1) {
-  width: 94%;
-  height: 70px;
-  background: black;
-  margin-top: 10px;
-  border: solid 2px #181818;
-  border-radius: 5px;
-}
 .game-right-section > aside:nth-of-type(2) {
   width: 100%;
   border: 3px solid #181818;
@@ -148,4 +140,23 @@
 .game-locked-button {
   background: rgb(97, 97, 97);
   cursor: default;
+}
+
+/* log */
+.game-right-section > aside:nth-of-type(1) {
+  width: 94%;
+  height: 70px;
+  background: black;
+  margin-top: 10px;
+  border: solid 2px #181818;
+  border-radius: 5px;
+  overflow-y: scroll;
+  
+}
+.log-element {
+  color: white;
+  font-size: 12px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 5px;
 }

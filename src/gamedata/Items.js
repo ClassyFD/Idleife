@@ -23,7 +23,7 @@ const items = {
   },
   grass_fiber: {
     id: 2,
-    name: "grass fiber",
+    name: "grass_fiber",
     plural: "grass fibers",
     description: "Obtained by pulling grass from the ground.",
     rarity: 1,
@@ -51,7 +51,7 @@ const items = {
   },
   sharp_stone:{
     id: 6,
-    name: "sharp stone",
+    name: "sharp_stone",
     plural: "sharp stones",
     description: "I kept rubbing a rock on a rock and it made it pointy.",
     rarity: 2,

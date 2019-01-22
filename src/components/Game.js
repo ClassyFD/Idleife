@@ -25,12 +25,13 @@ class Game extends Component {
         grass_fiber: 0,
         sharp_stone: 0,
       },
+      log: ["Welcome to Idleife!"],
     }
   }
 
   componentWillMount = () => {
     this.setState({
-      actionsAvailable: [getActions()]
+      actionsAvailable: getActions(),
     })
   }
 
@@ -51,7 +52,10 @@ class Game extends Component {
           nextInventory[itemEl.item.name] = nextInventory[itemEl.item.name] + itemEl.amount;
         })
         this.setState({
-          inventory: nextInventory
+          inventory: nextInventory,
+          log: [
+            ...this.state.log,
+          ]
         })
       }
     }
@@ -87,6 +91,11 @@ class Game extends Component {
           <header></header>
           <main></main>
           <aside>
+            {state.log.map((logEl)=>{
+              return (
+                <p className="log-element">{logEl}</p>
+              )
+            })}
           </aside>
           <aside>
             <div className="game-unlockable-button-container">
