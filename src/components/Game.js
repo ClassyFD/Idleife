@@ -48,15 +48,31 @@ class Game extends Component {
           return calculateItems(rewardEl.amount.min, rewardEl.amount.max, rewardEl.chance, rewardEl.item);
         })
         const nextInventory = this.state.inventory
+        let log = 'received';
+        let logStatus = false;
         item.forEach((itemEl)=>{
-          nextInventory[itemEl.item.name] = nextInventory[itemEl.item.name] + itemEl.amount;
+          nextInventory[itemEl.item.name] += itemEl.amount;
+          console.log(itemEl.item)
+          if (itemEl.amount > 1) {
+            log = log.concat(' ' + itemEl.amount.toString() + ' ' + itemEl.item.plural + ',');
+            logStatus = true;
+          } else if (itemEl.amount === 1) {
+            log = log.concat(' ' + itemEl.amount + ' ' + itemEl.item.name.split('_').join(' ') + ',');
+            logStatus = true;
+          }
         })
+        if (logStatus) {
+          log = log.slice(0, -1).concat('.');
+        } else {
+          log = log.concat(' nothing!');
+        }
         this.setState({
           inventory: nextInventory,
           log: [
             ...this.state.log,
+            log
           ]
-        })
+        }, ()=>this.logRef.scrollIntoView())
       }
     }
   }
@@ -96,6 +112,7 @@ class Game extends Component {
                 <p className="log-element">{logEl}</p>
               )
             })}
+            <div ref={(e)=>{this.logRef = e}}/>
           </aside>
           <aside>
             <div className="game-unlockable-button-container">
