@@ -42,29 +42,34 @@ class Game extends Component {
   }
 
   performAction = (element) => {
-    for (let key in element.reward) {
-      if (key === 'items') {
+    const requirements = element.requirements
+    const nextInventory = this.state.inventory // creating a duplicate of the current inventory in order to be able to do maths on it.
+    if (requirements) {
+      for (let itemKey in requirements.items) {
+        nextInventory[itemKey] -= requirements.items[itemKey]; // subtracts items from copied inventory.
+      }
+    }
+    for (let key in element.reward) { // mapping through the reward
+      if (key === 'items') { // the item part of the reward
         const item = element.reward[key].map((rewardEl)=>{
           return calculateItems(rewardEl.amount.min, rewardEl.amount.max, rewardEl.chance, rewardEl.item);
-        })
-        const nextInventory = this.state.inventory
-        let log = 'received';
-        let logStatus = false;
+        }) // this is the variable that stores the item array returned by calculating the item rewards.
+        let log = 'received'; // default statement. ex."received 1 stick"
+        let logStatus = false; // if items are received, changes to true. 
         item.forEach((itemEl)=>{
-          nextInventory[itemEl.item.name] += itemEl.amount;
-          console.log(itemEl.item)
+          nextInventory[itemEl.item.name] += itemEl.amount; // adds item to copied inventory
           if (itemEl.amount > 1) {
-            log = log.concat(' ' + itemEl.amount.toString() + ' ' + itemEl.item.plural + ',');
-            logStatus = true;
+            log = log.concat(' ' + itemEl.amount.toString() + ' ' + itemEl.item.plural + ','); // this is the actual logged message.
+            logStatus = true; // if there is an item, change status to true.
           } else if (itemEl.amount === 1) {
-            log = log.concat(' ' + itemEl.amount + ' ' + itemEl.item.name.split('_').join(' ') + ',');
-            logStatus = true;
+            log = log.concat(' ' + itemEl.amount + ' ' + itemEl.item.name.split('_').join(' ') + ','); // this is the actual logged message, but singular.
+            logStatus = true; // if there is an item, change status to true.
           }
         })
         if (logStatus) {
-          log = log.slice(0, -1).concat('.');
+          log = log.slice(0, -1).concat('.'); // adds a period at the end of the log if there was any items. 
         } else {
-          log = log.concat(' nothing!');
+          log = log.concat(' nothing!'); // if there were no items given, make log output "received nothing!"
         }
         this.setState({
           inventory: nextInventory,
@@ -72,7 +77,7 @@ class Game extends Component {
             ...this.state.log,
             log
           ]
-        }, ()=>this.logRef.scrollIntoView())
+        }, ()=>this.logRef.scrollIntoView()) // scrolls to bottom of log
       }
     }
   }
