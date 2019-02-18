@@ -9,6 +9,8 @@ const getActions = () => {
       time: actions[key].time,
       reward: actions[key].reward,
       requirements: actions[key].requirements,
+      success: actions[key].success,
+      failure: actions[key].failure
     })
   }
   return actionArr

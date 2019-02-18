@@ -54,7 +54,7 @@ class Game extends Component {
         const item = element.reward[key].map((rewardEl)=>{
           return calculateItems(rewardEl.amount.min, rewardEl.amount.max, rewardEl.chance, rewardEl.item);
         }) // this is the variable that stores the item array returned by calculating the item rewards.
-        let log = 'received'; // default statement. ex."received 1 stick"
+        let log = element.success; // default statement. ex."received 1 stick"
         let logStatus = false; // if items are received, changes to true. 
         item.forEach((itemEl)=>{
           nextInventory[itemEl.item.name] += itemEl.amount; // adds item to copied inventory
@@ -69,7 +69,7 @@ class Game extends Component {
         if (logStatus) {
           log = log.slice(0, -1).concat('.'); // adds a period at the end of the log if there was any items. 
         } else {
-          log = log.concat(' nothing!'); // if there were no items given, make log output "received nothing!"
+          log = element.failure // if there were no items given, make log output "received nothing!"
         }
         this.setState({
           inventory: nextInventory,

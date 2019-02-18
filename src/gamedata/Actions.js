@@ -4,6 +4,8 @@ const actions = {
     id: 1,
     title: 'Gather materials',
     action: 'Gathering materials',
+    success: 'Gathered',
+    failure: 'You searched for a while, but found nothing.',
     requirements: null,
     time: 2,
     reward: {
@@ -54,6 +56,8 @@ const actions = {
     id: 2,
     title: 'Sharpen stone',
     action: 'Sharpening stone',
+    success: 'Created',
+    failure: 'Failed to sharpen stone, received nothing.',
     requirements: {
       items: {
         stone: 1,

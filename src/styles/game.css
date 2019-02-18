@@ -159,3 +159,6 @@
   padding-right: 5px;
   margin: 5px;
 }
+.test {
+  opacity: 0!important;
+}
