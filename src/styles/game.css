@@ -44,25 +44,22 @@
   align-items: center;
   width: 750px;
 }
-.game-right-section > header {
-  width: 94%;
-  background: white;
-  height: 75px;
-  margin-top: 20px;
-  border: 2px solid #181818;
-  border-radius: 5px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
 .game-right-section > main {
   width: 94%;
-  background: url('../assets/mountain-bg.png') no-repeat center center;
-  background-size: cover;
   height: 300px;
+  background: white;
   border: 2px solid #181818;
   border-top: none;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.game-right-section > main h1 {
+  margin: 5px auto;
+  font-size: 20px;
+  /* position: absolute; */
+  align-self: center;
 }
 .game-right-section > aside:nth-of-type(2) {
   width: 100%;
@@ -159,6 +156,86 @@
   padding-right: 5px;
   margin: 5px;
 }
-.test {
-  opacity: 0!important;
+.game-right-section-header {
+  width: 94%;
+  background: white;
+  height: 75px;
+  margin-top: 20px;
+  border: 2px solid #181818;
+  border-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.game-progress-bar-cont {
+  height: 5px;
+  border: 1px solid black;
+  width: 90%;
+  border-radius: 20px;
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+}
+.game-progress-bar {
+  height: 100%;
+  border-radius: 20px;
+  width: 0%;
+  background: green;
+}
+ 
+.game-crafting-tab > ul li {
+  width: 114.5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  margin-bottom: 0px;
+  font-size: 12px;
+  background: rgba(180, 180, 180, 0.233);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+.game-crafting-tab > ul li:hover {
+  background: rgba(0, 0, 0, 0.233);
+}
+.game-right-section > main > ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  justify-items: flex-start;
+  align-content: flex-start;
+}
+/* rarities */
+.game-inv-item-el {
+  width: 114.5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+  border-radius: 5px;
+  margin: 10px;
+  margin-bottom: 0px;
+  font-size: 12px;
+}
+.game-inv-item-el span {
+  font-weight: bold;
+}
+.item-rarity-1 { /* poor */
+  background: rgba(180, 180, 180, 0.233);
+}
+.item-rarity-2 { /* common */
+  background: rgba(0, 0, 0, 0.233);
+}
+.item-rarity-3 {
+  background: rgba(172, 255, 47, 0.377)
 }

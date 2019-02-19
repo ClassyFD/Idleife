@@ -1,13 +1,12 @@
 import items from './Items';
 const actions = {
   gatherMaterials: {
-    id: 1,
     title: 'Gather materials',
     action: 'Gathering materials',
     success: 'Gathered',
     failure: 'You searched for a while, but found nothing.',
     requirements: null,
-    time: 2,
+    time: 1000,
     reward: {
       items: [
       {
@@ -53,11 +52,11 @@ const actions = {
     ]},
   },
   sharpenStone: {
-    id: 2,
     title: 'Sharpen stone',
     action: 'Sharpening stone',
     success: 'Created',
     failure: 'Failed to sharpen stone, received nothing.',
+    time: 2000,
     requirements: {
       items: {
         stone: 1,
@@ -71,11 +70,35 @@ const actions = {
             min: 0,
             max: 1,
           },
-          chance: 3,
+          chance: 2,
         },
       ]
     },
-    time: 3,
-  },
+  }
+  // name: {
+  //   id: 0,
+  //   title: "",
+  //   action: "",
+  //   success: "",
+  //   failure: "",
+  //   time: 0,
+  //   requirements: {
+  //     items: {
+  //       stone: 0,
+  //     }
+  //   },
+  //   reward: {
+  //     items: [
+  //       {
+  //         item: items.,
+  //         amount: {
+  //           min: 0,
+  //           max: 0,
+  //         },
+  //         chance: 0,
+  //       },
+  //     ]
+  //   },
+  // },
 }
 export default actions;

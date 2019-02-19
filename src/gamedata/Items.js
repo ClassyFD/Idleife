@@ -14,47 +14,81 @@
 */
 
 const items = {
-  stick: { 
-    id: 1,
+  stick: {
     name: "stick",
     plural: "sticks",
     description: "A brown stick. They're needed in every game, trust me.",
     rarity: 1,
   },
   grass_fiber: {
-    id: 2,
     name: "grass_fiber",
     plural: "grass fibers",
     description: "Obtained by pulling grass from the ground.",
     rarity: 1,
   },
+  grass_twine: {
+    name: "grass_twine",
+    plural: "grass twines",
+    description: "Stronger together.",
+    rarity: 2,
+  },
+  grass_rope: {
+    name: "grass_rope",
+    plural: "grass ropes",
+    description: "Strong enough to hold most things together.",
+    rarity: 2,
+  },
   pebble: {
-    id: 3,
     name: "pebble",
     plural: "pebbles",
-    description: "Yum... fruity peb- ouch! never mind...",
+    description: "Yum... fruity peb- *crack* never mind...",
     rarity: 1,
   },
   dirt: {
-    id: 4,
     name: "dirt",
     plural: "dirt",
-    description: "I have two chests full of it.",
+    description: "I have 8 chests full of this stuff.",
     rarity: 1,
   },
   stone: {
-    id: 5,
     name: "stone",
     plural: "stones",
-    description: "A hard rock.",
+    description: "Well it's a small rock.",
     rarity: 1,
   },
-  sharp_stone:{
-    id: 6,
+  sharp_stone: {
     name: "sharp_stone",
     plural: "sharp stones",
-    description: "I kept rubbing a rock on a rock and it made it pointy.",
+    description: "I kept grinding a rock on the floor until it was pointy.",
     rarity: 2,
   },
+  stone_knife: {
+    name: "stone_knife",
+    plural: "stone knives",
+    description: "Careful, it's sharp!",
+    durability: 50,
+    rarity: 2,
+  },
+  stone_hammer: {
+    name: "stone_hammer",
+    plural: "stone hammers",
+    description: "Makes it much easier to smash things.",
+    durability: 50,
+    rarity: 2,
+  },
+  stone_axe: {
+    name: "stone_axe",
+    plural: "stone axes",
+    description: "Cuts trees down with ease.",
+    durability: 50,
+    rarity: 3,
+  },
 }
+// name: {
+//   id: ,
+//   name: "",
+//   plural: "",
+//   description: "",
+//   rarity: ,
+// },
 export default items;
