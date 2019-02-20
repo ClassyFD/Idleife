@@ -44,16 +44,64 @@ const crafting = {
       ]
     },
   },
-  stone_axe: {
-    id: 1,
-    title: "stone axe",
-    action: "Crafting stone axe",
+  stone_hammer: {
+    title: "stone hammer",
+    action: "Crafting stone hammer",
     time: 4000,
     requirements: {
       items: {
         stone: 2,
         stick: 1,
-        grass_fiber: 3
+        grass_rope: 1
+      }
+    },
+    reward: {
+      items: [
+        {
+          item: items.stone_hammer,
+          amount: {
+            min: 1,
+            max: 1,
+          },
+          chance: 1,
+        },
+      ]
+    },
+  },
+  stone_knife: {
+    title: "stone knife",
+    action: "Crafting stone knife",
+    time: 4000,
+    requirements: {
+      items: {
+        sharp_stone: 1,
+        stick: 1,
+        grass_twine: 1
+      }
+    },
+    reward: {
+      items: [
+        {
+          item: items.stone_knife,
+          amount: {
+            min: 1,
+            max: 1,
+          },
+          chance: 1,
+        },
+      ]
+    },
+  },
+  stone_axe: {
+    title: "stone axe",
+    action: "Crafting stone axe",
+    time: 4000,
+    requirements: {
+      items: {
+        sharp_stone: 1,
+        stone: 1,
+        stick: 1,
+        grass_rope: 1
       }
     },
     reward: {

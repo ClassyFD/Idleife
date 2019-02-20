@@ -1,7 +1,7 @@
 /* rarity:
   1: poor: found everywhere
   2: common: found in most places / easily craftable
-  3: uncommon: found sometimes in nature / still easy to craft.
+  3: uncommon: rarely found in nature / still somewhat easy to craft.
   4: decent: 
   5: rare:
   6: super rare:
@@ -67,14 +67,14 @@ const items = {
     plural: "stone knives",
     description: "Careful, it's sharp!",
     durability: 50,
-    rarity: 2,
+    rarity: 3,
   },
   stone_hammer: {
     name: "stone_hammer",
     plural: "stone hammers",
     description: "Makes it much easier to smash things.",
     durability: 50,
-    rarity: 2,
+    rarity: 3,
   },
   stone_axe: {
     name: "stone_axe",
@@ -85,7 +85,6 @@ const items = {
   },
 }
 // name: {
-//   id: ,
 //   name: "",
 //   plural: "",
 //   description: "",

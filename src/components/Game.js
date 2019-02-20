@@ -71,6 +71,7 @@ class Game extends Component {
             }
             let logStatus = false; // if items are received, changes to true. 
             item.forEach((itemEl)=>{
+              console.log(itemEl);
               if (nextInventory[itemEl.item.name]) {
                 nextInventory[itemEl.item.name] += itemEl.amount; // adds item to copied inventory
               } else {

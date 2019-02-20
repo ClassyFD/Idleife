@@ -31,13 +31,13 @@ const actions = {
           min: 1,
           max: 1,
         },
-        chance: 3,
+        chance: 2,
       },
       {
         item: items.dirt,
         amount: {
           min: 1,
-          max: 1,
+          max: 2,
         },
         chance: 2,
       },
@@ -45,7 +45,7 @@ const actions = {
         item: items.pebble,
         amount: {
           min: 1,
-          max: 1,
+          max: 2,
         },
         chance: 2,
       },
@@ -67,10 +67,10 @@ const actions = {
         {
           item: items.sharp_stone,
           amount: {
-            min: 0,
+            min: 1,
             max: 1,
           },
-          chance: 2,
+          chance: 3,
         },
       ]
     },
